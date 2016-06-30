@@ -9,8 +9,9 @@
 #import "List.h"
 
 @implementation List
+
 //初始化链表
--(void) listInit:(List *)list{
+- (void) listInit:(List *)list{
     list->size = 0;
     list->head = NULL;
     list->tail = NULL;
@@ -18,16 +19,15 @@
 }
 
 //在元素element后插入newElement
-
--(int)listInsNext:(List *)list over:(ListElemt *)element over:(ListElemt *)newElement{
+- (int)listInsNext:(List *)list over:(ListElemt *)element over:(ListElemt *)newElement{
     
     
-    if(newElement==NULL){
+    if(newElement == NULL){
         return -1;
     }
     
-    if(element==NULL){
-        if(list_size(list)==0){
+    if(element == NULL){
+        if(list_size(list) == 0){
             list->tail = newElement;
         }
         newElement->next = list->head;
@@ -35,7 +35,7 @@
         
     }
     else{
-        if(element==NULL){
+        if(element == NULL){
             list->tail = newElement;
         }
         newElement->next = element->next;
@@ -48,23 +48,23 @@
 }
 
 //移除指定element后的元素
--(int)listRemNext:(List *)list over:(ListElemt *)element{
+- (int)listRemNext:(List *)list over:(ListElemt *)element{
     
     ListElemt *oldEmement;
     
-    if(list_size(list)==0){
+    if(list_size(list) == 0){
         return -1;
     }
-    if (element==NULL) {
+    if (element == NULL) {
         oldEmement = list->head;
         list->head = list->head->next;
         
-        if(list_size(list)==0){
+        if(list_size(list) == 0){
             list->tail = NULL;
         }
     }
     else{
-        if(element->next==NULL){
+        if(element->next == NULL){
             return -1;
         }
         oldEmement = element->next;
@@ -79,13 +79,11 @@
 }
 
 //输出链表
--(void)outPut:(List *)list{
+- (void)outPut:(List *)list{
     ListElemt *pre = list->head;
-    while (pre!=nil) {
+    while (pre != nil) {
         NSLog(@"%@",pre->data);
         pre = pre->next;
-        
-        
     }
 }
 

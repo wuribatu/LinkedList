@@ -15,13 +15,13 @@
     @public int size;
 }
 //初始化链表
--(void)listInit :(List*) list;
+- (void)listInit :(List *) list;
 //在指定的element后添加newElement
--(int)listInsNext:(List*) list over:(ListElemt *) element over:(ListElemt *)newElement;
+- (int)listInsNext:(List *) list over:(ListElemt *) element over:(ListElemt *)newElement;
 //移除指定element后的元素
--(int)listRemNext:(List*) list over:(ListElemt *) element;
+- (int)listRemNext:(List *) list over:(ListElemt *) element;
 //输出链表
--(void)outPut:(List*) list;
+- (void)outPut:(List*) list;
 
 
 #define list_size(list)((list)->size)
